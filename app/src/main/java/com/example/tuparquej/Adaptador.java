@@ -1,6 +1,7 @@
 package com.example.tuparquej;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class Adaptador extends BaseAdapter {
 
         convertView= LayoutInflater.from(context).inflate(R.layout.item, null);
 
-        Button btnFoto=convertView.findViewById(R.id.buttonParque);
+        Button btnFoto= (Button)convertView.findViewById(R.id.buttonParque);
         TextView nombre=convertView.findViewById(R.id.textViewNombre);
         TextView barrio=convertView.findViewById(R.id.textViewBarrio);
         TextView estrellas=convertView.findViewById(R.id.textViewEstrellas);
@@ -54,6 +55,17 @@ public class Adaptador extends BaseAdapter {
         estrellas.setText(item.getEstrellas()+"");
         distancia.setText(item.getDistancia()+"");
 
+        btnFoto.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent =new Intent(context, parqueDetails.class);
+                context.startActivity(intent);
+            }
+        });
+
+
+
         return convertView;
     }
+
+
 }
