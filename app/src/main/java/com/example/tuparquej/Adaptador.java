@@ -56,12 +56,12 @@ public class Adaptador extends BaseAdapter {
         barrio.setText(item.getBarrio());
         estrellas.setText(item.getEstrellas()+"");
         distancia.setText(item.getDistancia()+"");
-
+        btnFoto.setTag(position);
         btnFoto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent =new Intent(context, parqueDetails.class);
                 Bundle b =new Bundle();
-                b.putString("key",item.getNombre());
+                b.putString("key",(Integer) v.getTag()+"");
                 intent.putExtras(b);
                 context.startActivity(intent);
             }
