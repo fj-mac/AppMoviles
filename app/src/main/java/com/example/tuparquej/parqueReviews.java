@@ -1,39 +1,28 @@
 package com.example.tuparquej;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-public class parqueDetails extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
-    private ImageButton reviews;
+public class parqueReviews extends AppCompatActivity {
+
+    private ImageButton details;
     private ImageButton ahora;
-    private String nombre;
-    private TextView nomb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parque_details);
-        reviews=(ImageButton) findViewById(R.id.imageButtonReviews);
+        setContentView(R.layout.activity_parque_reviews);
+        details=(ImageButton) findViewById(R.id.imageButtonDetails);
         ahora=(ImageButton) findViewById(R.id.imageButtonAhora);
-        nomb=(TextView) findViewById(R.id.textView6);
 
-
-        Bundle b=getIntent().getExtras();
-        if(b!=null)
-            nombre=b.getString("key");
-
-        nomb.setText(nombre);
-
-        reviews.setOnClickListener(new View.OnClickListener() {
+        details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openReviews();
+                openDetails();
             }
         });
         ahora.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +33,8 @@ public class parqueDetails extends AppCompatActivity {
         });
     }
 
-    public void openReviews(){
-        Intent intent =new Intent(this, parqueReviews.class);
+    public void openDetails(){
+        Intent intent =new Intent(this, parqueDetails.class);
         startActivity(intent);
     }
 
@@ -53,5 +42,5 @@ public class parqueDetails extends AppCompatActivity {
         Intent intent =new Intent(this, parqueAhora.class);
         startActivity(intent);
     }
-
+    
 }

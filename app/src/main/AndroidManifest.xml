@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".parqueDetails"></activity>
+        <activity android:name=".parqueAhora"></activity>
+        <activity android:name=".parqueReviews"></activity>
         <activity android:name=".Home" />
         <activity android:name=".MainActivity">
             <intent-filter>

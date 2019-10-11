@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".parqueDetails">
+    tools:context=".parqueReviews">
 
     <TextView
         android:id="@+id/textView5"
@@ -133,7 +133,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:layout_constraintVertical_bias="0.07"
-        app:srcCompat="@drawable/details" />
+        app:srcCompat="@drawable/detailsgris" />
 
     <ImageButton
         android:id="@+id/imageButtonReviews"
@@ -148,7 +148,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageButtonDetails"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         app:layout_constraintVertical_bias="0.07"
-        app:srcCompat="@drawable/reviews" />
+        app:srcCompat="@drawable/reviewsverde" />
 
     <ImageButton
         android:id="@+id/imageButtonAhora"
@@ -182,7 +182,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonDetails"
         app:layout_constraintVertical_bias="0.03"

@@ -2,6 +2,7 @@ package com.example.tuparquej;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class Adaptador extends BaseAdapter {
     private Context context;
     private ArrayList<Entidad> listItems;
-
+    private Entidad item;
 
     public Adaptador(Context context, ArrayList<Entidad> listItems) {
         this.context = context;
@@ -37,9 +38,10 @@ public class Adaptador extends BaseAdapter {
         return 0;
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Entidad item=(Entidad) getItem(position);
+        item=(Entidad) getItem(position);
 
         convertView= LayoutInflater.from(context).inflate(R.layout.item, null);
 
@@ -58,6 +60,9 @@ public class Adaptador extends BaseAdapter {
         btnFoto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent =new Intent(context, parqueDetails.class);
+                Bundle b =new Bundle();
+                b.putString("key",item.getNombre());
+                intent.putExtras(b);
                 context.startActivity(intent);
             }
         });
